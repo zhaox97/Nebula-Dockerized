@@ -1,0 +1,21 @@
+version: '3'
+services: 
+  elasticsearch:
+    build: ./elasticsearch
+    ports:
+    - "9200:9200"
+    - "9300:9300"
+    volumes:
+    - /var/www/db:/www/data
+  nebula:
+    build: ./nebula
+    network_mode: "host"
+    environment:
+    - PORT=80
+    volumes:
+    - /var/www/data:/data
+  omniview:
+    build: ./omniview
+    network_mode: "host"
+    volumes:
+    - /var/www/data:/data

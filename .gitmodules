@@ -1,0 +1,9 @@
+[submodule "neb/Nebula"]
+	path = neb/Nebula
+	url = https://github.com/DiscoveryAnalyticsCenter/Nebula.git
+[submodule "omni/Omniview"]
+	path = omni/Omniview
+	url = https://github.com/DiscoveryAnalyticsCenter/Omniview.git
+[submodule "es/Nebula-Elasticsearch"]
+	path = es/Nebula-Elasticsearch
+	url = https://github.com/DiscoveryAnalyticsCenter/Nebula-Elasticsearch.git
