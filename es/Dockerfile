@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 RUN mkdir /www
 
-COPY ./src /www
+COPY ./Nebula-Elasticsearch /www
 
 WORKDIR /www/bin
 RUN apt-get update

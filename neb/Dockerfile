@@ -35,10 +35,10 @@ RUN pip install nltk
 RUN pip install elasticsearch
 RUN python -m nltk.downloader stopwords
 
-COPY ./src/package.json /www
+COPY ./Nebula/package.json /www
 RUN npm install
 
-COPY ./src /www
+COPY ./Nebula /www
 EXPOSE 8081
 
 CMD ["npm", "start"]
