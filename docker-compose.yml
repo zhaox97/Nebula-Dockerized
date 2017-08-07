@@ -13,9 +13,9 @@ services:
     environment:
     - PORT=80
     volumes:
-    - /var/www/Cosmos-Dockerized/data:/data
+    - ./data:/data
   omniview:
     build: ./omni
     network_mode: "host"
     volumes:
-    - /var/www/Cosmos-Dockerized/data:/data
+    - ./data:/data
