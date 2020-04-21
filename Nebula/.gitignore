@@ -1,0 +1,12 @@
+node_modules
+log
+build
+*.log
+elasticsearch/data
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+*.pages
+*.DS_STORE
+data/customCSV/*.csv

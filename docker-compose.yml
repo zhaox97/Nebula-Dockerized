@@ -1,21 +1,21 @@
 version: '3'
 services: 
   elasticsearch:
-    build: ./es
+    build: ./Nebula-Elasticsearch
     ports:
     - "9200:9200"
     - "9300:9300"
     volumes:
     - /var/www/db:/www/data
   nebula:
-    build: ./neb
+    build: ./Nebula
     network_mode: "host"
     environment:
     - PORT=80
     volumes:
     - ./data:/data
   omniview:
-    build: ./omni
+    build: ./Omniview
     network_mode: "host"
     volumes:
     - ./data:/data
