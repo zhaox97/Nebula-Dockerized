@@ -1,0 +1,3 @@
+[submodule "Omniview"]
+	path = Omniview
+	url = https://github.com/DiscoveryAnalyticsCenter/Omniview.git
