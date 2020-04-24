@@ -2,7 +2,7 @@
 This repository serves as a potentially simpler way of installing and launching all our web applications. This build of the project opts for using Docker as a means of virtualization. This way, the project can be launched without having to install all the necessary components to your local machine.
 
 # Installation
-**NOTE:** The installation instructions below assume that all components can be run using Docker. However, Nebula-Elasticsearch currently fails to run properly within a Docker container. Using Nebula and Omniview with Docker and Nebula-Pipeline manually does not work. Because of this, manual installation and starting is required for each submodule. We hope to fix this in the future since Docker makes this process much easier.
+**NOTE:** The installation instructions below assume that all components can be run using Docker. However, Nebula-Elasticsearch currently fails to run properly within a Docker container. Using Nebula and Omniview with Docker and Nebula-Pipeline manually does not work. Because of this, manual installation and starting is required for each submodule (where instructions are in each submodule's README). We hope to fix this in the future since Docker makes this process much easier.
 
 For all platforms, all that is required for installation is a local copy of the project, and a Docker installation.
 ## OS X
