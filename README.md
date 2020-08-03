@@ -4,7 +4,7 @@ This repository serves as a potentially simpler way of installing and launching 
 # Installation
 **NOTE:** The installation instructions below assume that all components can be run using Docker. However, Nebula-Elasticsearch currently fails to run properly within a Docker container. Using Nebula and Omniview with Docker and Nebula-Pipeline manually does not work. Because of this, manual installation and starting is required for each submodule (where instructions are in each submodule's README). We hope to fix this in the future since Docker makes this process much easier.
 
-For all platforms, all that is required for installation is a local copy of the project, and a Docker installation.
+For all platforms, all that is required for installation is a local copy of the project and a Docker installation.
 ## OS X
  [Download for OS X](https://www.docker.com/docker-mac)
  
@@ -24,6 +24,9 @@ For all platforms, all that is required for installation is a local copy of the 
 
 to install. The Docker daemon starts automatically, so run `sudo docker run hello-world` in a terminal to verify the installation.
 
+## VirtualBox Compaitibility Issues
+There is a known compatibility issue between VirtualBox and Docker. If you have VirtualBox, it is recommended that you uninstall it entirely so that Docker can work properly. Otherwise, it is recommended that you install each module/submodule separately by follwing the instructions in their perspective READMEs.
+
 # User Guide
 
 Once Docker is installed, in a terminal, navigate to your `Cosmos-Dockerized/` folder (or any of its subdirectories) and run the command: 
@@ -34,7 +37,7 @@ If you are just re-launching the project, using the `--build` tag is unnecessary
 
 # Developer Notes
 
-When initialing cloning from git, be sure to either run `git clone` with the `--recursive` command, or run `git submodule update --init --recursive` to pull in all the submodules. You should verify that all submodules have been successfully downloaded (i.e., have files in them). The module/submodule structure is as follows:
+When initialing cloning from git, be sure to either run `git clone --recursive` or `git submodule update --init --recursive` to pull in all the submodules. You should verify that all submodules have been successfully downloaded (i.e., have files in them) and run `git pull` in the submodule folder if there are missing files. The module/submodule structure is as follows:
 ```
 Cosmos-Dockerized
     |
@@ -53,7 +56,7 @@ When making any changes to the source code, the Docker containers must be restar
 
 When developing code, keep in mind that each submodule is its own individual module/repository. As such, each submodule tracks its files separately from each other. This includes maintaining a separate list of branches and commits for each module. The way that the "parent" module tracks changes to its submodules is by tracking which commit it should point to for that submodule. For example, if you make a change to the Nebula-Pipeline sub-submodule (within the Nebula submodule), running `git status` in the Nebula submodule will indicate that changes have been made to the Nebula-Pipeline submodule with no further details. Similarly, running `git status` from the Cosmos-Dockerized repository will report changes to the `Nebula` submodule (since Nebula-Pipeline is nested within Nebula). To properly track this change, it will first need to be committed to the Nebula-Pipeline repository. Then, the Nebula repository should commit its Nebula-Pipeline submodule to properly track the new commit that was just made. Finally, Cosmos-Dockerized should commit its Nebula submodule to properly track the new commit for Nebula that tracks the Nebula-Pipeline commit/change. **Although this can seem tedious, it's important to ensure this tracking is done properly so that your collaborators know how you are altering your submodules. It also means they can run `git submodule update --recursive` to pull in all your changes at once.**
 
-Because of the way that modules track their submodules, it means that you may encounted a **DETACHED HEAD state**. This state means that you are pointing to a specific commit separately from a branch. When you are in this state, you can neither push or pull code since git doesn't know which branch it should point to. To fix this issue, simply run `git checkout branchName` to tell git which branch you'd like to push/pull to.
+Because of the way that modules track their submodules, it means that you may encounter a **DETACHED HEAD state**. This state means that you are pointing to a specific commit separately from a branch. When you are in this state, you can neither push or pull code since git doesn't know which branch it should point to. To fix this issue, simply run `git checkout branchName` to tell git which branch you'd like to push/pull to.
 
 ## Structure
 This project is organized as a Docker project. The core pieces are as follows:
