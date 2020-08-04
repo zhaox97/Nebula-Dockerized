@@ -15,7 +15,7 @@ services:
     volumes:
     - ./data:/data
   omniview:
-    build: ./Nebula-Omniview
+    build: ./Cosmos-Omniview
     network_mode: "host"
     volumes:
     - ./data:/data
