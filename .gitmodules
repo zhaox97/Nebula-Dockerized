@@ -1,9 +1,0 @@
-[submodule "Omniview"]
-	path = Omniview
-	url = https://github.com/DiscoveryAnalyticsCenter/Omniview.git
-[submodule "Nebula-Elasticsearch"]
-	path = Nebula-Elasticsearch
-	url = https://github.com/DiscoveryAnalyticsCenter/Nebula-Elasticsearch.git
-[submodule "Nebula"]
-	path = Nebula
-	url = https://github.com/DiscoveryAnalyticsCenter/Nebula.git
