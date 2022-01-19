@@ -1,9 +1,9 @@
 [submodule "Nebula"]
 	path = Nebula
-	url = https://github.com/dowlmic/Nebula.git
+	url = https://github.com/zhaox97/Nebula.git
 [submodule "Nebula-Elasticsearch"]
 	path = Nebula-Elasticsearch
-	url = https://github.com/dowlmic/Nebula-Elasticsearch.git
+	url = https://github.com/zhaox97/Nebula-Elasticsearch.git
 [submodule "Cosmos-Omniview"]
 	path = Cosmos-Omniview
-	url = https://github.com/dowlmic/Cosmos-Omniview.git
+	url = https://github.com/zhaox97/Cosmos-Omniview.git
