@@ -10,7 +10,7 @@ services:
   nebula:
     build: ./Nebula
     ports:
-    - "80:80"
+    - "4040:4040"
     volumes:
     - ./data:/data
   omniview:
